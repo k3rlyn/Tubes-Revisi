@@ -65,3 +65,35 @@ def split_manual(file):
     
     return real_split
 
+
+#-----------------------------------------------------------------------------------------------------------------------------------------
+#Fungsi untuk mengubah string ke dalam file berformat.csv
+def write_to_csv(string_user, string_candi, string_bahan_bangunan):
+        user = open("user.csv","w")
+        user.write(string_user)
+        user.close()
+        candi = open("candi.csv","w")
+        candi.write(string_candi)
+        candi.close()
+        bahan_bangunan = open("bahan_bangunan.csv","w")
+        bahan_bangunan.write(string_bahan_bangunan)
+        bahan_bangunan.close()
+
+#----------------------------------------------------------------------------------------------------------------------------------------
+#Fungsi Mengubah Array Menjadi String
+def arr_to_string(file, user):
+    if file == "user.csv":
+        jumlah_kolom = 3
+    elif file == "candi.csv":
+        jumlah_kolom = 5
+    elif file == "bahan_bangunan.csv":
+        jumlah_kolom = 3
+    string_user = ""
+    for i in range(len(user)): ##len user diganti dengan fungsi untuk mencari panjang sendiri
+        for j in range(jumlah_kolom):
+            if j != (jumlah_kolom-1):
+                string_user += "{};".format(user[i][j])
+            elif j == (jumlah_kolom-1):
+                string_user += "{}\n".format(user[i][j])
+    return string_user
+
