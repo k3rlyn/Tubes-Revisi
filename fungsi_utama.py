@@ -45,7 +45,7 @@ def logout(login_status) :
 #F07. Jin Pengumpul
 def kumpul():
     def jin_pengumpul():
-        return random.randint(0,5)
+        return random.randint(0,10)
     
     jumlah_batu = jin_pengumpul()
     jumlah_pasir = jin_pengumpul()
